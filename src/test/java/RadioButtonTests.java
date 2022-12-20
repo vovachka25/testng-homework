@@ -6,8 +6,7 @@ import org.testng.asserts.SoftAssert;
 import static Utils.RadioButtonUtils.clickYesRadioButton;
 import static Utils.RadioButtonUtils.isRadioButtonEnable;
 import static com.codeborne.selenide.Configuration.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RadioButtonTests extends ConfigTests{
     @BeforeTest

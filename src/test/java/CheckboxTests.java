@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CheckboxTests extends ConfigTests{
-
     @BeforeTest
     public void configureBaseUrl(){
         baseUrl = "http://the-internet.herokuapp.com";
@@ -40,6 +39,5 @@ public class CheckboxTests extends ConfigTests{
 
         softAssert.assertFalse(!checkboxes.get(1).is(Condition.checked));
         softAssert.assertAll();
-
     }
 }
