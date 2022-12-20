@@ -17,8 +17,6 @@ public class CheckboxTests extends ConfigTests{
     public void configureBaseUrl(){
         baseUrl = "http://the-internet.herokuapp.com";
         reportsFolder = "resources/CheckboxFailedTests";
-        ScreenShooter.captureSuccessfulTests = false;
-        savePageSource = false;
     }
 
     @Test

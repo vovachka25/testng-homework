@@ -13,8 +13,6 @@ public class RadioButtonTests extends ConfigTests{
     public void configureTests(){
         baseUrl = "https://demoqa.com";
         reportsFolder = "resources/RadioButtonFailedTests";
-        ScreenShooter.captureSuccessfulTests = false;
-        savePageSource = false;
     }
 
     @Test
