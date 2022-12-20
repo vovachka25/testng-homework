@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RadioButtonTests extends ConfigTests{
-
     @BeforeTest
     public void configureTests(){
         baseUrl = "https://demoqa.com";
@@ -26,7 +25,6 @@ public class RadioButtonTests extends ConfigTests{
         clickYesRadioButton();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(isRadioButtonEnable($("#noRadio")));
-//        softAssert.assertAll();
-        Assert.assertEquals(1,2);
+        softAssert.assertAll();
     }
 }
