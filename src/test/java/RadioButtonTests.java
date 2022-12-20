@@ -22,5 +22,6 @@ public class RadioButtonTests extends ConfigTests{
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(isRadioButtonEnable($("#noRadio")));
         softAssert.assertAll();
+        //ScreenShooter.class (listener)
     }
 }
