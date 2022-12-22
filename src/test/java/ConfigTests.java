@@ -4,7 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import static com.codeborne.selenide.Configuration.*;
@@ -22,6 +21,7 @@ public class ConfigTests {
         ScreenShooter.captureSuccessfulTests = false;
         savePageSource = false;
     }
+
     @AfterMethod
     public void teardown (){
         closeWebDriver();

@@ -1,41 +1,46 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.testng.ScreenShooter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import static Utils.CheckboxUtils.check;
 import static Utils.CheckboxUtils.uncheck;
-import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.reportsFolder;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CheckboxTests extends ConfigTests{
-    @BeforeTest
-    public void configureBaseUrl(){
+
+    @BeforeTest(groups = {"FrontEnd", "BackEnd"})
+    public void configure(){
         baseUrl = "http://the-internet.herokuapp.com";
         reportsFolder = "resources/CheckboxFailedTests";
     }
 
-    @Test
-    public void checkbox(){
+    SoftAssert softAssert = new SoftAssert();
+    @Test(groups = {"FrontEnd"})
+    public void unCheckboxTest() {
         open("/checkboxes");
         ElementsCollection checkboxes = $$("input[type=checkbox]");
         for (SelenideElement checkbox :
                 checkboxes) {
             uncheck(checkbox);
         }
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(checkboxes.get(0).is(Condition.checked));
+        softAssert.assertAll();
 
+    }
+    @Test(groups = {"BackEnd"})
+    public void checkboxTest(){
+        open("/checkboxes");
+        ElementsCollection checkboxes = $$("input[type=checkbox]");
         for (SelenideElement checkbox :
-                checkboxes) {
+            checkboxes) {
             check(checkbox);
         }
-
-        softAssert.assertFalse(!checkboxes.get(1).is(Condition.checked));
-        softAssert.assertAll();
+        softAssert.fail();
     }
 }
