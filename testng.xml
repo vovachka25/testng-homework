@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testing CheckboxTest and RadioButtonsTest">
-    <test name="Regression" thread-count="2" parallel="tests">
-        <groups>
-            <define name="all">
-                <include name="FrontEnd" />
-                <include name="BackEnd" />
-            </define>
-            <run>
-                <include name="all"/>
-            </run>
-        </groups>
+<suite name="Suite" parallel="tests">
+    <test name="test1">
+        <parameter name="firstName" value="Vova"/>
+        <parameter name="lastName" value="Buligini"/>
+        <parameter name="gender" value="Male"/>
+        <parameter name="mobileNumber" value="598471552"/>
+
         <classes>
-            <class name="RadioButtonTests"/>
-            <class name="CheckboxTests"/>
+            <class name="ParameterTest" />
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+    <test name="test2">
+        <parameter name="firstName" value="Giorgi"/>
+        <parameter name="lastName" value="Buligini"/>
+        <parameter name="gender" value="Other"/>
+        <parameter name="mobileNumber" value="598522452"/>
+
+        <classes>
+            <class name="ParameterTest" />
+        </classes>
+    </test>
+
+    <test name="test3">
+        <parameter name="firstName" value="Nikoloz"/>
+        <parameter name="lastName" value="Buligini"/>
+        <parameter name="gender" value="Male"/>
+        <parameter name="mobileNumber" value="59622455"/>
+
+        <classes>
+            <class name="ParameterTest" />
+        </classes>
+    </test>
+
+    <test name="factoryTest">
+        <classes>
+            <class name="Factory"/>
+        </classes>
+    </test>
+</suite>
